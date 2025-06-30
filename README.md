@@ -7,6 +7,42 @@ Página oficial de MySQL: https://www.oracle.com/mysql/technologies/mysql-enterp
 
 Página oficial de Python: https://www.python.org/downloads/
 
+Con sql instalado y corriendo en nuetsro equipo, hay que crear nuestras tablas de mysql, empezaremos creando una base de datos que llamaremos, bookflix:
+
+```sql
+create database bookflix;
+```
+
+Después, copiaremos y pegaremos las tablas que contiene el script de la ruta **app/sqlmodel.sql**
+
+Y crearemos un usuario para acceder, ejecutar comando por comando preferentemente:
+
+```sql
+CREATE USER 'nombre_usuario'@'localhost' IDENTIFIED BY 'contraseña_segura';
+GRANT ALL PRIVILEGES ON bookflix.* TO 'nombre_usuario'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+A su vez, haremos un archivo llamado .env en la ruta inicial del proyecto, de forma que esté en la misma altura que run.py, algo así:
+
+—run.py
+
+|—.env
+
+|—app
+
+…
+
+Este archivo tiene que contener lo siguiente, copia y pega solamente, 
+
+```
+MYSQL_HOST=localhost
+MYSQL_USER=nombre_usuario
+MYSQL_PASSWORD=contraseña_segura
+MYSQL_DB=bookflix
+SECRET_KEY= contraseña_a_preferencia # cualquiera que decidas. 
+```
+
 Una vez cumplidos los requisitos, hay que clonar el repositorio:
 
 ```powershell
