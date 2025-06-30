@@ -1,4 +1,4 @@
-### BookFlix Backend
+# BookFlix Backend
 ## Instalación
 
 Necesitaremos python y mysql previamente instalado:
